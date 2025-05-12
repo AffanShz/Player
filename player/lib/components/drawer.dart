@@ -13,16 +13,16 @@ class MyDrawer extends StatelessWidget {
           DrawerHeader(
               child: Center(
             child: Icon(Icons.music_note,
-                size: 48, color: Theme.of(context).colorScheme.inversePrimary),
+                size: 48, color: Theme.of(context).textTheme.bodyLarge?.color),
           )),
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: ListTile(
               leading: Icon(Icons.home,
-                  color: Theme.of(context).colorScheme.inversePrimary),
+                  color: Theme.of(context).textTheme.bodyLarge?.color),
               title: Text('Home',
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary)),
+                      color: Theme.of(context).textTheme.bodyLarge?.color)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Navigate to home screen
@@ -33,10 +33,10 @@ class MyDrawer extends StatelessWidget {
             padding: const EdgeInsets.only(left: 16.0),
             child: ListTile(
               leading: Icon(Icons.settings,
-                  color: Theme.of(context).colorScheme.inversePrimary),
+                  color: Theme.of(context).textTheme.bodyLarge?.color),
               title: Text('Settings',
                   style: TextStyle(
-                      color: Theme.of(context).colorScheme.inversePrimary)),
+                      color: Theme.of(context).textTheme.bodyLarge?.color)),
               onTap: () {
                 Navigator.pop(context); // Close the drawer
                 // Navigate to settings screen

@@ -32,15 +32,20 @@ class SongScreen extends StatelessWidget {
                             onPressed: () => Navigator.pop(context),
                             icon: Icon(Icons.arrow_back,
                                 color: Theme.of(context)
-                                    .colorScheme
-                                    .inversePrimary)),
-                        const Text("A U D I O"),
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.color)),
+                        Text(
+                          "A U D I O",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
                         IconButton(
                             onPressed: () {},
                             icon: Icon(Icons.menu,
                                 color: Theme.of(context)
-                                    .colorScheme
-                                    .inversePrimary)),
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.color)),
                       ],
                     ),
                     const SizedBox(
@@ -69,16 +74,24 @@ class SongScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       currentSong.songName,
-                                      style: const TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineSmall
+                                          ?.copyWith(
+                                              fontWeight: FontWeight.bold),
                                     ),
-                                    Text(currentSong.artistName,
-                                        style: TextStyle(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .inversePrimary
-                                                .withOpacity(0.5))),
+                                    Text(
+                                      currentSong.artistName,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium
+                                          ?.copyWith(
+                                              color: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyMedium
+                                                  ?.color
+                                                  ?.withOpacity(0.5)),
+                                    ),
                                   ],
                                 )
                               ],
@@ -102,27 +115,37 @@ class SongScreen extends StatelessWidget {
                             children: [
                               Text(
                                 "${value.currentDuration.inMinutes}:${value.currentDuration.inSeconds % 60}",
-                                style: TextStyle(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .inversePrimary
-                                        .withOpacity(0.5)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.color
+                                            ?.withOpacity(0.5)),
                               ),
                               Icon(Icons.shuffle,
                                   color: Theme.of(context)
-                                      .colorScheme
-                                      .inversePrimary),
+                                      .textTheme
+                                      .bodyLarge
+                                      ?.color),
                               Icon(Icons.repeat,
                                   color: Theme.of(context)
-                                      .colorScheme
-                                      .inversePrimary),
+                                      .textTheme
+                                      .bodyLarge
+                                      ?.color),
                               Text(
                                 "${value.totalDuration.inMinutes}:${value.totalDuration.inSeconds % 60}",
-                                style: TextStyle(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .inversePrimary
-                                        .withOpacity(0.5)),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall
+                                            ?.color
+                                            ?.withOpacity(0.5)),
                               ),
                             ],
                           ),
@@ -147,8 +170,11 @@ class SongScreen extends StatelessWidget {
                                 value.seek(Duration(seconds: double.toInt()));
                               },
                               activeColor: Colors.blue,
-                              inactiveColor:
-                                  Colors.blue.withOpacity(0.3).withOpacity(0.3),
+                              inactiveColor: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.color
+                                  ?.withOpacity(0.3),
                             ),
                           ),
                         ],

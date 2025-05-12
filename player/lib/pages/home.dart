@@ -57,8 +57,16 @@ class _HomeScreenState extends State<HomeScreen> {
             final Song song = playlist[index];
 
             return ListTile(
-              title: Text(song.songName),
-              subtitle: Text(song.artistName),
+              title: Text(
+                song.songName,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              subtitle: Text(
+                song.artistName,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
               leading: SizedBox(
                 width: 50,
                 height: 50,
